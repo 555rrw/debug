@@ -1,0 +1,3 @@
+display_name: Debug Repair Collective
+short_description: Reproduce, diagnose, fix, and verify software bugs using copied mattpocock and Trail of Bits workflows.
+default_prompt: Debug and repair this codebase. Reproduce the issue, find root cause, patch it, and verify with tests or another concrete feedback loop.
