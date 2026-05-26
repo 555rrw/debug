@@ -8,11 +8,9 @@ Use this file to list every skill under `skills/` so ChatGPT, Codex, Claude Code
 
 ## Current Skills
 
-> Add each skill here when created or imported.
-
 | Skill | Path | Purpose | Status |
 |---|---|---|---|
-| _TBD_ | _TBD_ | _TBD_ | draft |
+| debug-repair-collective | `skills/debug-repair-collective/SKILL.md` | Coordinate systematic bug triage, repair, verification, and concise reporting. | draft |
 
 ## Recommended Skill Layout
 
