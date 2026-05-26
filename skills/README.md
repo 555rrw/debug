@@ -11,6 +11,7 @@ Use this file to list every skill under `skills/` so ChatGPT, Codex, Claude Code
 | Skill | Path | Purpose | Status |
 |---|---|---|---|
 | debug-repair-collective | `skills/debug-repair-collective/SKILL.md` | Coordinate systematic bug triage, repair, verification, and concise reporting. | draft |
+| game-development | `skills/game-development/` | Game-development skill pack converted from Claude Code Game Studios, including `ccgs-*` workflows and `ccgs-agent-*` specialist roles. | converted |
 
 ## Recommended Skill Layout
 
