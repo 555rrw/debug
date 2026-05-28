@@ -1,9 +1,9 @@
 # debug
 
-AI agent skills collection for coding, research, debugging, and execution-control workflows.
+AI agent skills collection for coding, research, debugging, game development, and execution-control workflows.
 
-本倉庫用來集中管理可被 AI Agent / Codex / Claude Code / Cursor 類工具讀取的 Skills。  
-所有正式技能都放在小寫 `skills/` 目錄下，每個技能以獨立資料夾管理，主要入口為 `SKILL.md`。
+本倉庫用來集中管理可被 AI Agent / Codex / Claude Code / Cursor / Manus 類工具讀取的 Skills。  
+所有正式技能都放在小寫 `skills/` 目錄下，每個技能以獨立資料夾管理，主要入口通常為 `SKILL.md`；若是大型技能包，則可使用資料夾內 README 或多個子技能作為索引。
 
 ## Repository Structure
 
@@ -13,105 +13,128 @@ AI agent skills collection for coding, research, debugging, and execution-contro
 ├── .gitignore
 └── skills/
     ├── agent-miranda/
-    │   └── SKILL.md
+    ├── ai-regression-guard/
+    ├── cache-read-saver/
+    ├── code-extreme-refiner/
+    ├── code-logic-refiner/
     ├── debug-repair-collective/
-    │   └── SKILL.md
+    ├── game-development/
     ├── lesson-before-invention/
-    │   └── SKILL.md
+    ├── tw-legal-rag-researcher/
     └── twinkle-hub-mcp-researcher/
-        └── SKILL.md
 ```
 
 ## Skills Overview
 
 | Folder | Skill Name | Purpose |
 | --- | --- | --- |
-| `skills/lesson-before-invention/` | `precedent-first` | Research-before-design protocol. Search external successful precedents before inventing new solutions. |
 | `skills/agent-miranda/` | `right-to-silence` | Silent execution mode. Stop over-explaining, act directly, ask only when blocked, and report final results. |
-| `skills/debug-repair-collective/` | `debug-repair-collective` | Bug reproduction, diagnosis, repair, verification, security review, fuzzing, and hardening workflow. |
-| `skills/twinkle-hub-mcp-researcher/` | `twinkle-hub-mcp-researcher` | Twinkle Hub MCP integration guide for Taiwan-specific datasets, public records, company data, statistics, and citation-grounded research. |
+| `skills/ai-regression-guard/` | `ai-regression-guard` | Prevent regression bugs when fixing, refactoring, reviewing, or adding features in existing codebases. |
+| `skills/cache-read-saver/` | `cache-read-saver` | Preserve cache-read / cached-input efficiency during long AI coding sessions and large repository tasks. |
+| `skills/code-extreme-refiner/` | `code-extreme-refiner` | Refine code aggressively while preserving correctness, reducing redundancy, clearing technical debt, and improving readability. |
+| `skills/code-logic-refiner/` | `code-logic-refiner` | Perform deep three-stage code logic review for correctness, technical-debt avoidance, and concise high-quality implementation. |
+| `skills/debug-repair-collective/` | `debug-repair-collective` | Reproduce, diagnose, patch, verify, review, fuzz, harden, and report software bugs through a systematic workflow. |
+| `skills/game-development/` | Game Development Skills | Converted Claude Code Game Studios skill pack for game-development workflows, slash-command style skills, and specialist roles. |
+| `skills/lesson-before-invention/` | `precedent-first` | Research-before-design protocol. Search successful precedents before inventing new solutions. |
+| `skills/tw-legal-rag-researcher/` | `tw-legal-rag-researcher` | Taiwan legal judgment retrieval and citation-grounded legal research through TW Legal RAG. |
+| `skills/twinkle-hub-mcp-researcher/` | `twinkle-hub-mcp-researcher` | Twinkle Hub MCP integration for Taiwan public datasets, company data, statistics, and citation-grounded research. |
+
+## Skill Categories
+
+### Execution Control
+
+- `agent-miranda` / `right-to-silence`  
+  Makes the agent stop narrating and start executing. Best for tasks where the user wants action instead of explanation.
+
+### Research Before Design
+
+- `lesson-before-invention` / `precedent-first`  
+  Forces the agent to look for working examples, proven patterns, and external precedents before designing from scratch.
+
+### Debugging and Code Safety
+
+- `debug-repair-collective`  
+  Main bug-fixing and verification workflow.
+
+- `ai-regression-guard`  
+  Prevents the common AI failure mode of fixing one bug while breaking existing behavior.
+
+### Code Refinement
+
+- `code-logic-refiner`  
+  Deep logic review for correctness, edge cases, and maintainability.
+
+- `code-extreme-refiner`  
+  Stronger cleanup/refactor mode for reducing redundancy and technical debt while keeping behavior intact.
+
+### Token / Cache Efficiency
+
+- `cache-read-saver`  
+  Helps long coding sessions preserve cache hits, reduce repeated context loading, and avoid token waste.
+
+### Game Development
+
+- `game-development`  
+  Converted game-development skill pack from Claude Code Game Studios. It includes `ccgs-*` workflow skills and `ccgs-agent-*` specialist roles.
+
+### Taiwan Research and Retrieval
+
+- `tw-legal-rag-researcher`  
+  Uses TW Legal RAG for Taiwan judgment retrieval and citation-grounded legal research. It should not fabricate legal records or citations.
+
+- `twinkle-hub-mcp-researcher`  
+  Uses Twinkle Hub MCP for Taiwan-specific public datasets, government records, company data, statistics, and grounded research.
 
 ## Usage Philosophy
 
-These skills are designed around four main principles:
+These skills are designed around several practical rules:
 
 1. **Do not invent blindly**  
    Before designing a new solution, search for working precedents and reuse proven patterns when appropriate.
 
 2. **Act, do not narrate endlessly**  
-   For execution tasks, the agent should minimize filler, avoid unnecessary planning text, and focus on completing the task.
+   For execution tasks, minimize filler, avoid unnecessary planning text, and focus on completing the task.
 
 3. **Debug through feedback loops**  
    Reproduce the issue, inspect evidence, patch carefully, and verify the result instead of only giving advice.
 
-4. **Use external retrieval when facts matter**  
-   For Taiwan-specific public data or factual research, use Twinkle Hub MCP or other grounded tools instead of hallucinating.
+4. **Avoid regression loops**  
+   When modifying an existing codebase, preserve current behavior unless the user explicitly asks to change it.
 
-## Skill Details
+5. **Keep context and cache stable**  
+   In long coding sessions, avoid needless re-reading, model switching, and context churn.
 
-### `lesson-before-invention` / `precedent-first`
+6. **Use external retrieval when facts matter**  
+   For Taiwan legal, public-data, government, company, or statistical claims, use grounded retrieval tools and cite results instead of hallucinating.
 
-Use when the task requires design, architecture, protocol writing, skill creation, or implementation strategy.  
-The agent should first look for successful existing examples, extract their patterns, then adapt them to the current repo.
+## Recommended Activation Examples
 
-Typical triggers:
-
-- 「參考別人的」
-- 「不要自己亂想」
-- 「有成功案例就借鑑」
-- “Find precedent first”
-- “Don't reinvent the wheel”
-
-### `agent-miranda` / `right-to-silence`
-
-Use when the user wants the agent to stop explaining and directly execute.  
-The agent should avoid verbose narration, avoid unnecessary permission-checking, and only ask questions when genuinely blocked.
-
-Typical triggers:
-
-- 「直接做」
-- 「不要說明」
-- 「緘默權」
-- “silent mode”
-- “no talk just do”
-
-### `debug-repair-collective`
-
-Use when software is broken, tests fail, regressions appear, logs show errors, or the user asks for debugging, repair, triage, review, fuzzing, or hardening.
-
-Core workflow:
-
-1. Clarify or infer the failure.
-2. Reproduce the issue.
-3. Inspect code and evidence.
-4. Patch the smallest safe fix.
-5. Run verification.
-6. Report what changed and what remains uncertain.
-
-### `twinkle-hub-mcp-researcher`
-
-Use for Taiwan-specific data retrieval and grounded research through Twinkle Hub MCP.
-
-Typical use cases:
-
-- Taiwan government records
-- Taiwan company or business data
-- Taiwan public datasets
-- Taiwan statistics
-- Citation-grounded factual research
-
-Important rule: never fabricate retrieved records, statistics, government data, company data, or citations.
+| User Intent | Recommended Skill |
+| --- | --- |
+| 「直接做，不要解釋」 | `agent-miranda` |
+| 「參考別人的成功案例」 | `lesson-before-invention` |
+| 「修 bug / 測試失敗 / 幫我 debug」 | `debug-repair-collective` |
+| 「不要修 A 壞 B」 | `ai-regression-guard` |
+| 「幫我把程式碼邏輯檢查到很嚴」 | `code-logic-refiner` |
+| 「幫我把程式碼精煉到極致」 | `code-extreme-refiner` |
+| 「長任務省 token / 保快取」 | `cache-read-saver` |
+| 「做遊戲開發流程或角色分工」 | `game-development` |
+| 「查台灣判決 / 法律 RAG」 | `tw-legal-rag-researcher` |
+| 「查台灣政府資料 / 公司資料 / 統計資料」 | `twinkle-hub-mcp-researcher` |
 
 ## Maintenance Rules
 
 - Keep all official skills under `skills/`.
-- Use lowercase folder name `skills`, not `skill` or `Skills`.
-- Each skill folder should contain a primary `SKILL.md`.
+- Use lowercase folder name `skills`, not `skill`, `Skills`, or root-level duplicate folders.
+- Each normal skill folder should contain a primary `SKILL.md`.
+- Large converted skill packs may include multiple sub-skills and an internal README.
 - Do not leave duplicate skill folders at the repository root.
-- If a skill is copied from another source, preserve useful attribution or reference notes inside that skill.
+- Keep this root `README.md` as the single overall index.
+- Avoid maintaining a second general index at `skills/README.md`; it becomes stale easily.
+- If a skill is copied or converted from another source, preserve useful attribution or reference notes inside that skill folder.
 - Prefer concise, operational instructions over long theory.
 
 ## Current Status
 
 This repository currently acts as a personal skill sandbox and reusable AI-agent workflow library.  
-The main focus is practical coding assistance, debugging, research grounding, and reducing unnecessary agent chatter.
+The main focus is practical coding assistance, debugging, regression prevention, code refinement, research grounding, game-development workflows, cache efficiency, and reducing unnecessary agent chatter.
