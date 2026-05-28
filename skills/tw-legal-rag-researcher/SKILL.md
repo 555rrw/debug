@@ -43,6 +43,63 @@ Always use the available interfaces in the following priority:
 4.  **Public web UI**: [https://dr-lawbot.com/ask](https://dr-lawbot.com/ask) (only as a fallback for manual reference or when other interfaces are unavailable/unsuitable)
 -   **TwinkleAI Hub**: [https://hub.twinkleai.tw/](https://hub.twinkleai.tw/) (for general information and resources related to TwinkleAI)
 
+## Twinkle Hub MCP Integration
+
+Twinkle Hub provides a general MCP endpoint for accessing various Taiwan-specific data and tools, which can complement legal research. It acts as a tool layer, providing data and functionalities, while the AI is responsible for understanding and organizing the information.
+
+### 1. Obtain API Key
+
+1.  Navigate to [https://hub.twinkleai.tw/](https://hub.twinkleai.tw/).
+2.  Log in to your account.
+3.  Go to the account/API key related page (e.g., [/dashboard](/en/dashboard)) to obtain your Twinkle Hub API Key (starts with `sk-...`).
+
+### 2. Twinkle Hub MCP Endpoint
+
+The official Twinkle Hub MCP endpoint is: `https://api.twinkleai.tw/mcp/`
+
+### 3. Claude Desktop / Cursor Configuration
+
+To configure your MCP client (e.g., Claude Desktop, Cursor), add the following to your MCP configuration file:
+
+```json
+{
+  "mcpServers": {
+    "twinkle-hub": {
+      "type": "http",
+      "url": "https://api.twinkleai.tw/mcp/",
+      "headers": {
+        "Authorization": "Bearer YOUR_TWINKLE_HUB_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Important**: Replace `YOUR_TWINKLE_HUB_API_KEY` with your actual API key. Ensure this key is kept confidential and never committed to public repositories.
+
+### 4. Claude Code Connection
+
+To connect using Claude Code, execute the following command:
+
+```bash
+claude mcp add --transport http twinkle-hub https://api.twinkleai.tw/mcp/ \
+  --header "Authorization: Bearer YOUR_TWINKLE_HUB_API_KEY"
+```
+
+**Important**: Replace `YOUR_TWINKLE_HUB_API_KEY` with your actual API key.
+
+### 5. How to Prompt AI to Use Twinkle Hub MCP
+
+Once connected, you can instruct the AI to use the `twinkle-hub` MCP with prompts like:
+
+-   "請使用 `twinkle-hub` MCP，列出目前可用工具。"
+-   "請使用 `twinkle-hub` MCP 查詢台灣政府開放資料中和「空氣品質」相關的資料集。"
+
+### Security Note
+
+-   Never embed your API key directly into GitHub repositories, screenshots, or public chat logs.
+-   Twinkle Hub is a MCP tool layer, not a model itself; it provides data and tools, while the AI is responsible for understanding and organizing the information.
+
 ## CLI Workflow
 
 To use the `twlegalrag` CLI tool:
