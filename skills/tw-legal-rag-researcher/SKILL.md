@@ -41,6 +41,7 @@ Always use the available interfaces in the following priority:
 2.  **MCP endpoint**: `https://tlr.dr-lawbot.com/mcp` (for programmatic access within Manus)
 3.  **OpenAPI schema**: `https://tlr.dr-lawbot.com/openapi.yaml` (for direct API calls if MCP is not suitable)
 4.  **Public web UI**: [https://dr-lawbot.com/ask](https://dr-lawbot.com/ask) (only as a fallback for manual reference or when other interfaces are unavailable/unsuitable)
+-   **TwinkleAI Hub**: [https://hub.twinkleai.tw/](https://hub.twinkleai.tw/) (for general information and resources related to TwinkleAI)
 
 ## CLI Workflow
 
