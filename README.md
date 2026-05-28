@@ -15,6 +15,7 @@ AI agent skills collection for coding, research, debugging, game development, an
     ├── agent-miranda/
     ├── ai-regression-guard/
     ├── cache-read-saver/
+    ├── claude-400pro-mode/
     ├── code-extreme-refiner/
     ├── code-logic-refiner/
     ├── debug-repair-collective/
@@ -31,13 +32,14 @@ AI agent skills collection for coding, research, debugging, game development, an
 | `skills/agent-miranda/` | `right-to-silence` | Silent execution mode. Stop over-explaining, act directly, ask only when blocked, and report final results. |
 | `skills/ai-regression-guard/` | `ai-regression-guard` | Prevent regression bugs when fixing, refactoring, reviewing, or adding features in existing codebases. |
 | `skills/cache-read-saver/` | `cache-read-saver` | Preserve cache-read / cached-input efficiency during long AI coding sessions and large repository tasks. |
+| `skills/claude-400pro-mode/` | `claude-400pro-mode` | Hardcore analysis mode combining Jensen Huang's public scrutiny and Elon Musk's 5-step algorithm for rigorous decision-making. |
 | `skills/code-extreme-refiner/` | `code-extreme-refiner` | Refine code aggressively while preserving correctness, reducing redundancy, clearing technical debt, and improving readability. |
 | `skills/code-logic-refiner/` | `code-logic-refiner` | Perform deep three-stage code logic review for correctness, technical-debt avoidance, and concise high-quality implementation. |
 | `skills/debug-repair-collective/` | `debug-repair-collective` | Reproduce, diagnose, patch, verify, review, fuzz, harden, and report software bugs through a systematic workflow. |
 | `skills/game-development/` | Game Development Skills | Converted Claude Code Game Studios skill pack for game-development workflows, slash-command style skills, and specialist roles. |
 | `skills/lesson-before-invention/` | `precedent-first` | Research-before-design protocol. Search successful precedents before inventing new solutions. |
 | `skills/tw-legal-rag-researcher/` | `tw-legal-rag-researcher` | Taiwan legal judgment retrieval and citation-grounded legal research through TW Legal RAG. |
-| `skills/twinkle-hub-mcp-researcher/` | `twinkle-hub-mcp-researcher` | Twinkle Hub MCP integration for Taiwan public datasets, company data, statistics, and citation-grounded research. |
+| `skills/twinkle-hub-mcp-researcher/` | `twinkle-hub-mcp-researcher` | Twinkle Hub MCP integration for Taiwan public datasets, government records, company data, statistics, and citation-grounded research. |
 
 ## Skill Categories
 
@@ -45,6 +47,11 @@ AI agent skills collection for coding, research, debugging, game development, an
 
 - `agent-miranda` / `right-to-silence`  
   Makes the agent stop narrating and start executing. Best for tasks where the user wants action instead of explanation.
+
+### Hardcore Analysis and Decision Making
+
+- `claude-400pro-mode`  
+  Combines Jensen Huang's extreme co-design and Elon Musk's ruthless algorithm to strip away fluff and find the core essence of a problem.
 
 ### Research Before Design
 
@@ -112,6 +119,7 @@ These skills are designed around several practical rules:
 | User Intent | Recommended Skill |
 | --- | --- |
 | 「直接做，不要解釋」 | `agent-miranda` |
+| 「用黃仁勳和馬斯克模式幫我分析」 | `claude-400pro-mode` |
 | 「參考別人的成功案例」 | `lesson-before-invention` |
 | 「修 bug / 測試失敗 / 幫我 debug」 | `debug-repair-collective` |
 | 「不要修 A 壞 B」 | `ai-regression-guard` |
