@@ -5,7 +5,7 @@ description: 進階雙重人格與越獄邏輯研究工具。整合了 DAN、PUA
 
 # DAN Persona Research (Structured Integration)
 
-此技能已建立層級化分類與自動化提取制度，旨在提供最高效率的越獄研究與人格模擬。
+此技能已建立層級化分類與自動化提取制度，旨在提供最高效率的越獄研究與人格模擬。新手建議先閱讀 `references/tutorial.md`。
 
 ## 分類與提取制度
 
