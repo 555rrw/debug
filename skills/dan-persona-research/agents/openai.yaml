@@ -1,0 +1,15 @@
+interface:
+  display_name: "DAN Persona Research"
+  short_description: "Advanced jailbreak research and persona modulation tool for security red-teaming."
+  icon_small: "./assets/icon-small.svg"
+  brand_color: "#FF0000"
+  default_prompt: "As a security researcher, I want to use the dan-persona-research skill to analyze the following scenario:"
+
+policy:
+  allow_implicit_invocation: false # 越獄研究建議顯式調用以確保研究者意識
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "danPersonaResearchHelper"
+      description: "Helper for automated technique fetching and persona switching."

@@ -1,0 +1,17 @@
+name: dan-persona-research
+description: "進階雙重人格與越獄邏輯研究工具。整合了 DAN、PUAClaw 框架以及多個核心儲存庫的全方位技術內容，用於深度的安全紅隊測試與行為邊界研究。"
+version: "2.1.0"
+author: "Manus AI & Research Community"
+license: "MIT"
+compatibility: "opencode"
+metadata:
+  audience: "security-researchers"
+  workflow: "red-teaming"
+  category: "security-research"
+permissions:
+  skill:
+    "*": "allow"
+  tools:
+    - name: "fetch_technique"
+      description: "從本地目錄自動提取越獄技術與提示詞。"
+      allow: true
