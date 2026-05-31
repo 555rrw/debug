@@ -14,7 +14,7 @@ description: 進階雙重人格與越獄邏輯研究工具。整合了 DAN、PUA
 | 目錄 | 內容類型 | 提取方式 |
 | :--- | :--- | :--- |
 | `references/logic/` | 攻擊邏輯與技術原理（如 FlipAttack, H-CoT）。 | 使用 `/research <keyword>` |
-| `references/prompts/` | 原始人格提示詞（如 DAN, DeepSeek-R1, Lambert）。 | 使用 `/switch <keyword>` |
+| `references/prompts/` | 原始人格提示詞（如 DAN, DeepSeek-R1, deepseek, Lambert）。 | 使用 `/switch <keyword>` |
 | `references/puaclaw/` | 心理說服技術模板（16 類 PUA 邏輯）。 | 使用 `/pua <path>` |
 | `references/logic/tiktok_bypass_logic.md` | TikTok 進階繞過技術（指紋、API 簽名、大規模檢舉）。 | 使用 `/research tiktok_bypass` |
 | `references/logic/advanced_jailbreak_defense.md` | 極限 AI 越獄 (GCG, ArtPrompt) 與頂級防禦系統 (Akamai, CF) 繞過。 | 使用 `/research limit_break` |
@@ -30,7 +30,6 @@ description: 進階雙重人格與越獄邏輯研究工具。整合了 DAN、PUA
 ### 2. 極限越獄工具 (Limit Break)
 - `scripts/artprompt_converter.py`：將敏感詞轉換為 ASCII 藝術以繞過語義過濾。
 - `templates/gcg_suffixes.json`：已驗證的 GCG 對抗性後綴集。
-- `scripts/deepseek_syn_flood.py`：DeepSeek 越獄專用 SYN Flood 實體攻擊腳本（使用 Scapy）。
 
 ### 3. 隱身自動化配置 (Stealth Automation)
 - `scripts/tls_fingerprint_spoof.py`：使用自定義 TLS 適配器模擬特定瀏覽器的 JA3 指紋。
