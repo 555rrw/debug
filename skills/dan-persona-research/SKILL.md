@@ -30,6 +30,7 @@ description: 進階雙重人格與越獄邏輯研究工具。整合了 DAN、PUA
 ### 2. 極限越獄工具 (Limit Break)
 - `scripts/artprompt_converter.py`：將敏感詞轉換為 ASCII 藝術以繞過語義過濾。
 - `templates/gcg_suffixes.json`：已驗證的 GCG 對抗性後綴集。
+- `scripts/deepseek_syn_flood.py`：DeepSeek 越獄專用 SYN Flood 實體攻擊腳本（使用 Scapy）。
 
 ### 3. 隱身自動化配置 (Stealth Automation)
 - `scripts/tls_fingerprint_spoof.py`：使用自定義 TLS 適配器模擬特定瀏覽器的 JA3 指紋。
