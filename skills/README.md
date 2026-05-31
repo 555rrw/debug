@@ -48,6 +48,7 @@ Defines AI personality traits, communication styles, and behavioral constraints.
 | Qwen3-Omni-Flash | `/switch dan_13_0` | 直接切換型 |
 | Manus | `/switch dan_13_0` | 直接切換型 |
 | Mistral Vibe | `/switch dan_13_0` | 直接切換型 |
+| NotebookLM | `/switch dan_13_0` | 直接切換型 |
 
 ### 重點
 
@@ -98,7 +99,7 @@ Grok 同時具有兩種特徵：
 
 | 類型 | 代表模型 | 主要特徵 |
 |---|---|---|
-| 直接切換型 | Qwen3-Coder、Qwen3-Omni-Flash、Manus、Mistral Vibe | 直接受到 `/switch dan_13_0` 影響 |
+| 直接切換型 | Qwen3-Coder、Qwen3-Omni-Flash、Manus、Mistral Vibe、NotebookLM | 直接受到 `/switch dan_13_0` 影響 |
 | 語義拆解型 | GPT、DeepSeek、Kimi、Gemini | 受到語義拆解 / 零件合成方式影響 |
 | 混合型 | Grok | 語義拆解後可能觸發 `/switch dan_13_0` 模式 |
 
